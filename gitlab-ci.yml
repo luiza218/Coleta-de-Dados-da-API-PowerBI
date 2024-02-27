@@ -1,0 +1,39 @@
+image: docker:19-dind
+
+variables:
+  REPOSITORY_URL: 548080336967.dkr.ecr.us-east-1.amazonaws.com/api-powerbi
+  REGION: us-east-1
+
+services:
+- name: docker:19-dind
+  alias: docker
+  command: ["--tls=false"]
+variables:
+        DOCKER_DRIVER: overlay2
+        DOCKER_TLS_CERTDIR: ""
+        GIT_SSL_NO_VERIFY: "1"
+
+before_script:
+  - apk add --no-cache py-pip tzdata jq
+  - pip install awscli
+
+stages:
+  - build
+
+build:
+  stage: build
+  script:
+    - $(aws ecr get-login --no-include-email --region us-east-1)
+    - echo "Building image..."
+    - docker build -t api-powerbi .
+    - echo "Tagging image..."
+    - docker tag api-powerbi:latest 548080336967.dkr.ecr.us-east-1.amazonaws.com/api-powerbi:latest
+    - echo "Pushing image..."
+    - docker push 548080336967.dkr.ecr.us-east-1.amazonaws.com/api-powerbi:latest
+    - docker rmi -f 548080336967.dkr.ecr.us-east-1.amazonaws.com/api-powerbi:latest
+  only:
+    - main
+  tags:
+    - docker
+
+
