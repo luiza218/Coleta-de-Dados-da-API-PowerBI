@@ -1,7 +1,7 @@
 image: docker:19-dind
 
 variables:
-  REPOSITORY_URL: 548080336967.dkr.ecr.us-east-1.amazonaws.com/api-powerbi
+  REPOSITORY_URL: sua repository url
   REGION: us-east-1
 
 services:
@@ -27,10 +27,10 @@ build:
     - echo "Building image..."
     - docker build -t api-powerbi .
     - echo "Tagging image..."
-    - docker tag api-powerbi:latest 548080336967.dkr.ecr.us-east-1.amazonaws.com/api-powerbi:latest
+    - docker tag imagem
     - echo "Pushing image..."
-    - docker push 548080336967.dkr.ecr.us-east-1.amazonaws.com/api-powerbi:latest
-    - docker rmi -f 548080336967.dkr.ecr.us-east-1.amazonaws.com/api-powerbi:latest
+    - docker push imagem
+    - docker rmi -f imagem
   only:
     - main
   tags:
