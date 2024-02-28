@@ -37,7 +37,7 @@ def pipeline_powerbi():
     task_raw = KubernetesPodOperator(    
         task_id = "task_to_raw",
         namespace = 'airflow',
-        image = '548080336967.dkr.ecr.us-east-1.amazonaws.com/api-powerbi:latest',
+        image = 'sua imagem',
         arguments = ['/app/api_powerbi_to_raw.py'],
         name = 'task_to_raw',
         env_vars = {'AWS_ACCESS_KEY_ID': aws_access_key_id,
@@ -51,7 +51,7 @@ def pipeline_powerbi():
     task_staging = KubernetesPodOperator(    
         task_id = "task_to_staging",
         namespace = 'airflow',
-        image = '548080336967.dkr.ecr.us-east-1.amazonaws.com/api-powerbi:latest',
+        image = 'sua imagem',
         arguments = ['/app/api_powerbi_to_staging.py'],
         name = 'task_to_staging',
         env_vars = {'AWS_ACCESS_KEY_ID': aws_access_key_id,
@@ -65,7 +65,7 @@ def pipeline_powerbi():
     task_consumer = KubernetesPodOperator(
         task_id="task_to_consumer",
         namespace='airflow',
-        image='548080336967.dkr.ecr.us-east-1.amazonaws.com/api-powerbi:latest',
+        image='sua imagem',
         arguments=['/app/api_powerbi_to_consumer.py'],
         name='task_to_consumer',
         env_vars={'AWS_ACCESS_KEY_ID': aws_access_key_id,
