@@ -1,4 +1,4 @@
-# Power BI Data Collector for Python
+# Power BI Data Collector for Python 📊🐍
 
 This Python script simplifies the process of retrieving data from Microsoft Power BI using the Power BI REST API. 
 Seamlessly integrate this tool into your workflow to automate data extraction, enabling efficient and timely analysis of your Power BI datasets.
@@ -12,7 +12,7 @@ Seamlessly integrate this tool into your workflow to automate data extraction, e
 
 ## Getting Started
 1. Clone this repository.
-2. Follow the documentation and usage instructions. You might want to look into the [API DOCUMENTATION](/https://learn.microsoft.com/en-us/rest/api/power-bi/)
+2. Follow the documentation and usage instructions. You might want to look into the [API DOCUMENTATION](/https://learn.microsoft.com/en-us/rest/api/power-bi/).
 
 ## Details
 This script has a **raw-zone**, **staging-zone** and **consumer zone**.
