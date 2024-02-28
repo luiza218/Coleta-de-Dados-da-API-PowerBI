@@ -1,6 +1,6 @@
 # Power BI Data Collector for Python 📊🐍
 
-This Python script simplifies the process of retrieving data from Microsoft Power BI using the Power BI REST API. 
+This Python script simplifies the process of retrieving data from Microsoft Power BI using the Power BI REST API and an Azure APP. 
 Seamlessly integrate this tool into your workflow to automate data extraction, enabling efficient and timely analysis of your Power BI datasets.
 
 ## Key Features
