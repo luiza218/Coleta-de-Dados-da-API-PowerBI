@@ -14,8 +14,6 @@ Seamlessly integrate this tool into your workflow to automate data extraction, e
 1. Clone this repository.
 2. Follow the documentation and usage instructions. You might want to look into the [API DOCUMENTATION](/https://learn.microsoft.com/en-us/rest/api/power-bi/).
 
-- As for the API requests, the script uses:
-
 ## API Requests
 
 - "https://api.powerbi.com/v1.0/myorg/groups/{groupId}/reports" ↪️  Used to retrieve the existing REPORTS in a given GROUP.
